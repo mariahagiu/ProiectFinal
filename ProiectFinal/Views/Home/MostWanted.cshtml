@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ProiectFinal.Models.LibraryViewModels.ClientsGroup>
+@{
+    ViewData["Title"] = "Ordered Books Statistics";
+}
+<h2 class="text-info">Most Wanted Trainings Statistics</h2>
+<br />
+<table class="table table-striped border">
+    <tr>
+        <th>
+           Training Name
+        </th>
+        <th>
+            Total number of Clients
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingName)
+            </td>
+            <td>
+                @item.ClientCount
+            </td>
+        </tr>
+    }
+</table>
